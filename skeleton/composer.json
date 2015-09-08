@@ -1,0 +1,44 @@
+{
+    "name": ":vendor_name/:package_name",
+    "description": ":package_description",
+    "keywords": [
+        ":vendor_name",
+        ":package_name"
+    ],
+    "homepage": "https://github.com/:vendor_name/:package_name",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": ":author_name",
+            "email": ":author_email",
+            "homepage": ":author_website",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.5.0",
+        "illuminate/support": "~5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            ":VendorName\\:PackageName\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            ":VendorName\\:PackageName\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

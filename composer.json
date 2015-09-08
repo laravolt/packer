@@ -1,0 +1,29 @@
+{
+    "name": "laravolt/packer",
+    "description": "A cli tool for creating Laravel packages.",
+    "keywords": [
+        "Packager",
+        "Laravel",
+        "package",
+        "skeleton"
+    ],
+    "homepage": "https://github.com/laravolt/packer",
+    "license": "EUPL-1.1",
+    "authors": [
+        {
+            "name": "Bayu Hendra",
+            "email": "uyab.exe@gmail.com",
+            "homepage": "https://github.com/uyab"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5",
+        "illuminate/console": "~5",
+        "illuminate/filesystem": "~5",
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravolt\\Packer\\": "src"
+        }
+    }
+}
