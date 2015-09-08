@@ -19,7 +19,7 @@
     "require": {
         "illuminate/support": "~5",
         "illuminate/console": "~5",
-        "illuminate/filesystem": "~5",
+        "illuminate/filesystem": "~5"
     },
     "autoload": {
         "psr-4": {
