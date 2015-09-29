@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 /**
  * Class PackageServiceProvider
  *
- * @package LaraLeague\:PackageName
+ * @package :VendorName\:PackageName
  * @see http://laravel.com/docs/5.1/packages#service-providers
  * @see http://laravel.com/docs/5.1/providers
  */
