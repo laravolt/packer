@@ -145,9 +145,9 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->app['router']->group([
             'namespace' => __NAMESPACE__
-        ], function() {
-            // index action showing the packages
-            $this->app['router']->any('/:package_name', [
+        ], function($router) {
+            // (Example) index action showing the packages
+            $router->any('/:package_name', [
                 'as'   => ':package_name:index',
                 'uses' => 'Controllers\:PackageNameController@index'
             ]);
