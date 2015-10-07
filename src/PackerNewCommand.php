@@ -58,8 +58,8 @@ class PackerNewCommand extends Command
         $bar->start();
 
         // Common variables
-        $vendor = $this->argument('vendor');
-        $name = $this->argument('name');
+        $vendor = strtolower($this->argument('vendor'));
+        $name = strtolower($this->argument('name'));
         $path = getcwd().'/packages/';
         $fullPath = $path.$vendor.'/'.$name;
         $cVendor = ucfirst($vendor);
