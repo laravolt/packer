@@ -20,7 +20,7 @@ class PackerNewCommand extends Command
      *
      * @var string
      */
-    protected $signature = "packer:new {vendor} {name}";
+    protected $signature = "packer:new {vendor} {name} {--force}";
 
     /**
      * The console command description.
@@ -62,8 +62,8 @@ class PackerNewCommand extends Command
         $name = strtolower($this->argument('name'));
         $path = getcwd().'/packages/';
         $fullPath = $path.$vendor.'/'.$name;
-        $cVendor = ucfirst($vendor);
-        $cName = ucfirst($name);
+        $cVendor = studly_case($vendor);
+        $cName = studly_case($name);
         $requirement = '"psr-4": {
             "'.$cVendor.'\\\\'.$cName.'\\\\": "packages/'.$vendor.'/'.$name.'/src",';
         $appConfigLine = 'App\Providers\RouteServiceProvider::class,
@@ -71,7 +71,11 @@ class PackerNewCommand extends Command
 
         // Start creating the package
         $this->info('Creating package '.$vendor.'\\'.$name.'...');
+
+        if(!$this->option('force')) {
             $this->helper->checkExistingPackage($path, $vendor, $name);
+        }
+
         $bar->advance();
 
         // Create the package directory
