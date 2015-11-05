@@ -60,19 +60,19 @@ class PackerNewCommand extends Command
         // Common variables
         $vendor = strtolower($this->argument('vendor'));
         $name = strtolower($this->argument('name'));
-        $path = getcwd().'/packages/';
-        $fullPath = $path.$vendor.'/'.$name;
+        $path = getcwd() . '/packages/';
+        $fullPath = $path . $vendor . '/' . $name;
         $cVendor = studly_case($vendor);
         $cName = studly_case($name);
         $requirement = '"psr-4": {
-            "'.$cVendor.'\\\\'.$cName.'\\\\": "packages/'.$vendor.'/'.$name.'/src",';
+            "' . $cVendor . '\\\\' . $cName . '\\\\": "packages/' . $vendor . '/' . $name . '/src",';
         $appConfigLine = 'App\Providers\RouteServiceProvider::class,
-        '.$cVendor.'\\'.$cName.'\\'.'ServiceProvider::class,';
+        ' . $cVendor . '\\' . $cName . '\\' . 'ServiceProvider::class,';
 
         // Start creating the package
-        $this->info('Creating package '.$vendor.'\\'.$name.'...');
+        $this->info('Creating package ' . $vendor . '\\' . $name . '...');
 
-        if(!$this->option('force')) {
+        if (!$this->option('force')) {
             $this->helper->checkExistingPackage($path, $vendor, $name);
         }
 
@@ -80,19 +80,19 @@ class PackerNewCommand extends Command
 
         // Create the package directory
         $this->info('Creating packages directory...');
-            $this->helper->makeDir($path);
+        $this->helper->makeDir($path);
         $bar->advance();
 
         // Create the vendor directory
         $this->info('Creating vendor...');
-         $this->helper->makeDir($path.$vendor);
+        $this->helper->makeDir($path . $vendor);
         $bar->advance();
 
         // Copying package skeleton
         $this->info('Copying package skeleton...');
         File::copyDirectory(__DIR__ . '/../skeleton', $fullPath);
 
-        foreach(File::allFiles($fullPath) as $file) {
+        foreach (File::allFiles($fullPath) as $file) {
             $search = [':vendor_name', ':VendorName', ':package_name', ':PackageName'];
             $replace = [$vendor, $cVendor, $name, $cName];
             $this->helper->replaceAndSave($file, $search, $replace);
@@ -103,9 +103,10 @@ class PackerNewCommand extends Command
 
         // Add it to composer.json
         $this->info('Adding package to composer and app...');
-        $this->helper->replaceAndSave(getcwd().'/composer.json', '"psr-4": {', $requirement);
-         //And add it to the providers array in config/app.php
-        $this->helper->replaceAndSave(getcwd().'/config/app.php', 'App\Providers\RouteServiceProvider::class,', $appConfigLine);
+        $this->helper->replaceAndSave(getcwd() . '/composer.json', '"psr-4": {', $requirement);
+        //And add it to the providers array in config/app.php
+        $this->helper->replaceAndSave(getcwd() . '/config/app.php', 'App\Providers\RouteServiceProvider::class,',
+            $appConfigLine);
         $bar->advance();
 
         // Finished creating the package, end of the progress bar
