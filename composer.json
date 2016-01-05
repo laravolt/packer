@@ -8,7 +8,7 @@
         "skeleton"
     ],
     "homepage": "https://github.com/laravolt/packer",
-    "license": "EUPL-1.1",
+    "license": "MIT",
     "authors": [
         {
             "name": "Bayu Hendra",
@@ -17,9 +17,9 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5",
-        "illuminate/console": "~5",
-        "illuminate/filesystem": "~5"
+        "illuminate/support": "~5.2",
+        "illuminate/console": "~5.2",
+        "illuminate/filesystem": "~5.2"
     },
     "autoload": {
         "psr-4": {
