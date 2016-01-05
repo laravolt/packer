@@ -2,6 +2,7 @@
     "name": ":vendor_name/:package_name",
     "description": ":package_description",
     "keywords": [
+        "laravel",
         ":vendor_name",
         ":package_name"
     ],
