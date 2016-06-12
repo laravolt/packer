@@ -8,15 +8,15 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
  * Class PackageServiceProvider
  *
  * @package :VendorName\:PackageName
- * @see http://laravel.com/docs/5.1/packages#service-providers
- * @see http://laravel.com/docs/5.1/providers
+ * @see http://laravel.com/docs/master/packages#service-providers
+ * @see http://laravel.com/docs/master/providers
  */
 class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
      *
-     * @see http://laravel.com/docs/5.1/providers#deferred-providers
+     * @see http://laravel.com/docs/master/providers#deferred-providers
      * @var bool
      */
     protected $defer = false;
@@ -24,7 +24,7 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the service provider.
      *
-     * @see http://laravel.com/docs/5.1/providers#the-register-method
+     * @see http://laravel.com/docs/master/providers#the-register-method
      * @return void
      */
     public function register()
@@ -34,7 +34,7 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Application is booting
      *
-     * @see http://laravel.com/docs/5.1/providers#the-boot-method
+     * @see http://laravel.com/docs/master/providers#the-boot-method
      * @return void
      */
     public function boot()
@@ -55,7 +55,7 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package views
      *
-     * @see http://laravel.com/docs/5.1/packages#views
+     * @see http://laravel.com/docs/master/packages#views
      * @return void
      */
     protected function registerViews()
@@ -71,7 +71,7 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package migrations
      *
-     * @see http://laravel.com/docs/5.1/packages#publishing-file-groups
+     * @see http://laravel.com/docs/master/packages#publishing-file-groups
      * @return void
      */
     protected function registerMigrations()
@@ -96,7 +96,7 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package public assets
      *
-     * @see http://laravel.com/docs/5.1/packages#public-assets
+     * @see http://laravel.com/docs/master/packages#public-assets
      * @return void
      */
     protected function registerAssets()
@@ -109,7 +109,7 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package translations
      *
-     * @see http://laravel.com/docs/5.1/packages#translations
+     * @see http://laravel.com/docs/master/packages#translations
      * @return void
      */
     protected function registerTranslations()
@@ -120,7 +120,7 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package configurations
      *
-     * @see http://laravel.com/docs/5.1/packages#configuration
+     * @see http://laravel.com/docs/master/packages#configuration
      * @return void
      */
     protected function registerConfigurations()
@@ -137,8 +137,8 @@ class ServiceProvider extends BaseServiceProvider
      * Register the package routes
      *
      * @warn consider allowing routes to be disabled
-     * @see http://laravel.com/docs/5.1/routing
-     * @see http://laravel.com/docs/5.1/packages#routing
+     * @see http://laravel.com/docs/master/routing
+     * @see http://laravel.com/docs/master/packages#routing
      * @return void
      */
     protected function registerRoutes()
