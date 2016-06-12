@@ -4,6 +4,7 @@ namespace Laravolt\Packer;
 
 use RuntimeException;
 use Illuminate\Filesystem\Filesystem;
+use Symfony\Component\Console\Helper\ProgressBar;
 
 /**
  * Helper functions for the Packager commands.
@@ -34,7 +35,7 @@ class PackerHelper
      * @param  object $bar Symfony ProgressBar instance
      * @return object $bar Symfony ProgressBar instance
      */
-    public function barSetup($bar)
+    public function barSetup(ProgressBar $bar)
     {
         // the finished part of the bar
         $bar->setBarCharacter('<comment>=</comment>');
@@ -61,7 +62,7 @@ class PackerHelper
      */
     public function replaceAndSave($oldFile, $search, $replace, $newFile = null)
     {
-        $newFile = ($newFile == null) ? $oldFile : $newFile ;
+        $newFile = ($newFile === null) ? $oldFile : $newFile ;
         $file = $this->files->get($oldFile);
         $replacing = str_replace($search, $replace, $file);
         $this->files->put($newFile, $replacing);
