@@ -2,7 +2,7 @@
     "name": "laravolt/packer",
     "description": "A cli tool for creating Laravel packages.",
     "keywords": [
-        "Packager",
+        "Packer",
         "Laravel",
         "package",
         "skeleton"
