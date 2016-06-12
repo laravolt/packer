@@ -58,14 +58,18 @@ class PackerHelper
      * @param  mixed  $search  String or array to look for (the needles)
      * @param  mixed  $replace What to replace the needles for?
      * @param  string $newFile Where to save, defaults to $oldFile
+     * @param  boolean $deleteOldFile Whether to delete $oldFile or not
      * @return void
      */
-    public function replaceAndSave($oldFile, $search, $replace, $newFile = null)
+    public function replaceAndSave($oldFile, $search, $replace, $newFile = null, $deleteOldFile = false)
     {
         $newFile = ($newFile === null) ? $oldFile : $newFile ;
         $file = $this->files->get($oldFile);
         $replacing = str_replace($search, $replace, $file);
         $this->files->put($newFile, $replacing);
+
+        if($deleteOldFile)
+            $this->files->delete($oldFile);
     }
 
     /**

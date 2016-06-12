@@ -95,7 +95,10 @@ class PackerNewCommand extends Command
         foreach (File::allFiles($fullPath) as $file) {
             $search = [':vendor_name', ':VendorName', ':package_name', ':PackageName'];
             $replace = [$vendor, $cVendor, $name, $cName];
-            $this->helper->replaceAndSave($file, $search, $replace);
+
+            $newfile = substr($file, 0, -5);
+
+            $this->helper->replaceAndSave($file, $search, $replace, $newfile, $deleteOldFile = true);
         }
 
         $bar->advance();
