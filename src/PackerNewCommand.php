@@ -20,7 +20,7 @@ class PackerNewCommand extends Command
      *
      * @var string
      */
-    protected $signature = "packer:new {vendor} {name} {--force}";
+    protected $signature = "laravolt:packer:new {vendor} {name} {--force}";
 
     /**
      * The console command description.

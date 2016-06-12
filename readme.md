@@ -18,7 +18,7 @@ Then add the service provider in `config/app.php`:
 The command will handle practically everything for you. It will create a packages directory, creates the vendor and package directory in it, pulls in a skeleton package, sets up composer.json, creates a service provider, registers the package in config/app.php and the app's composer.json. So you can start right away with only this command:
 
 ``` bash
-$ php artisan packer:new vendor_name package_name
+$ php artisan laravolt:packer:new vendor_name package_name
 ```
 
 ## Credits
