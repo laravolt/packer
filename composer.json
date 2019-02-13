@@ -25,5 +25,15 @@
         "psr-4": {
             "Laravolt\\Packer\\": "src"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Laravolt\\Packer\\PackerServiceProvider"
+            ]
+        }
     }
 }
